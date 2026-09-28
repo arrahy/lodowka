@@ -1,17 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Lodówka</title>
-        <link rel="stylesheet" href="reset.css">
-        <link rel="stylesheet" href="styles.css">
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rybia lodówka</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-    <body>
-        <h1 hidden>Produkty w lodówce</h1>
-        <main>
-            
-        </main>
-    </body>
+  <body>
+    <h1 hidden>Produkty w lodówce</h1>
+    <main id="main">
+      <form action="#" id="addingForm">
+        <div class="name">
+          <label for="product_name"></label>
+          <input
+            type="text"
+            name="product_name"
+            id="name"
+            required
+            placeholder="Nazwa"
+          />
+        </div>
+        <div>
+          <label for="product_firstDate"></label>
+          <input type="date" required />
+        </div>
+        <input type="submit" value="Dodaj" id="add" class="submit" />
+      </form>
+    </main>
+    <script src="./src/script.js"></script>
+  </body>
 </html>
