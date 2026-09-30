@@ -1,19 +1,39 @@
-const ADD_BUTTON = document.getElementById("add");
-const main = document.getElementById("main");
-let nameProduct = document.getElementById("name");
-const form = document.getElementById("addingForm");
+const main = document.querySelector("main");
+const form = document.querySelector("form");
+const foodName = document.getElementById("name");
+const foodExpiryDate = document.getElementById("product_firstDate");
+const foodOpenDate = document.getElementById("product_secondDate");
+const foodExpiryAfterOpen = document.getElementById("product_afterOpen");
+const foods = [];
+class Food {
+  constructor(product, expiryDate, openDate, daysAferOpen) {
+    this.product = product;
+    this.expiryDate = expiryDate;
+    this.openDate = openDate;
+    this.daysAferOpen = daysAferOpen;
+  }
+  addFood() {
+    const createProduct = (text) => {
+      const element = document.createElement("p");
+      element.textContent = text;
+      element.classList.add("product");
+      return element;
+    };
 
-function addProduct(prod) {
-  let newProduct = document.createElement("p");
-  newProduct.textContent = prod.value;
-  newProduct.classList.add("product");
-  main.appendChild(newProduct);
-  form.reset();
+    main.appendChild(createProduct(this.product));
+    main.appendChild(createProduct(this.expiryDate));
+  }
 }
-
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  addProduct(nameProduct);
+  let currentLast = 0;
+  foods[currentLast] = new Food(
+    foodName.value,
+    foodExpiryDate.value,
+    foodOpenDate.value,
+    foodExpiryAfterOpen.value,
+  );
+  foods[currentLast].addFood();
+  currentLast++;
+  form.reset();
 });
-
-// ADD_BUTTON.addEventListener('click', addProduct)

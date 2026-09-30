@@ -10,21 +10,27 @@
 
   <body>
     <h1 hidden>Produkty w lodówce</h1>
-    <main id="main">
-      <form action="#" id="addingForm">
-        <div class="name">
-          <label for="product_name"></label>
-          <input
-            type="text"
-            name="product_name"
-            id="name"
-            required
-            placeholder="Nazwa"
-          />
+    <main>
+      <form action="#">
+        <input
+          type="text"
+          name="product_name"
+          id="name"
+          required
+          placeholder="Nazwa"
+          autocomplete="off"
+        />
+        <div>
+          <label for="product_firstDate">Data ważności</label>
+          <input type="date" id="product_firstDate" required />
         </div>
         <div>
-          <label for="product_firstDate"></label>
-          <input type="date" required />
+          <label for="product_secondDate">Data otwarcia</label>
+          <input type="date" id="product_secondDate" />
+        </div>
+        <div>
+          <label for="product_afterOpen">Ile dni ważne po otwarciu?</label>
+          <input type="number" id="product_afterOpen" required />
         </div>
         <input type="submit" value="Dodaj" id="add" class="submit" />
       </form>
